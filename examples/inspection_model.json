@@ -1,0 +1,25 @@
+{
+  "states": ["normal", "worn", "fault"],
+  "observations": ["vibration", "heat", "noise"],
+  "initial": {
+    "normal": 0.80,
+    "worn": 0.15,
+    "fault": 0.05
+  },
+  "transitions": {
+    "normal": {"normal": 0.85, "worn": 0.12, "fault": 0.03},
+    "worn":   {"normal": 0.10, "worn": 0.70, "fault": 0.20},
+    "fault":  {"normal": 0.05, "worn": 0.15, "fault": 0.80}
+  },
+  "emissions": {
+    "normal": {"vibration": 0.70, "heat": 0.20, "noise": 0.10},
+    "worn":   {"vibration": 0.20, "heat": 0.50, "noise": 0.30},
+    "fault":  {"vibration": 0.10, "heat": 0.20, "noise": 0.70}
+  },
+  "sequences": [
+    {"id": "line-A-am",  "observations": ["vibration", "vibration", null, "heat"]},
+    {"id": "line-B-pm",  "observations": ["noise", "noise", "heat"]},
+    {"id": "sensor-gap", "observations": [null, null]},
+    {"id": "blank-log",  "observations": []}
+  ]
+}

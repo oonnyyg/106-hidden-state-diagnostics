@@ -1,0 +1,154 @@
+{
+  "states": [
+    "normal",
+    "worn",
+    "fault"
+  ],
+  "observations": [
+    "vibration",
+    "heat",
+    "noise"
+  ],
+  "results": [
+    {
+      "id": "line-A-am",
+      "status": "ok",
+      "observations": [
+        "vibration",
+        "vibration",
+        null,
+        "heat"
+      ],
+      "log_likelihood": -2.371009509118081,
+      "path": [
+        "normal",
+        "normal",
+        "normal",
+        "normal"
+      ],
+      "path_log_probability": -3.0334881401190996,
+      "state_counts": {
+        "normal": 4,
+        "worn": 0,
+        "fault": 0
+      },
+      "transition_counts": {
+        "normal": {
+          "normal": 3,
+          "worn": 0,
+          "fault": 0
+        },
+        "worn": {
+          "normal": 0,
+          "worn": 0,
+          "fault": 0
+        },
+        "fault": {
+          "normal": 0,
+          "worn": 0,
+          "fault": 0
+        }
+      },
+      "reason": null
+    },
+    {
+      "id": "line-B-pm",
+      "status": "ok",
+      "observations": [
+        "noise",
+        "noise",
+        "heat"
+      ],
+      "log_likelihood": -4.253777669534994,
+      "path": [
+        "worn",
+        "worn",
+        "worn"
+      ],
+      "path_log_probability": -5.711562661975163,
+      "state_counts": {
+        "normal": 0,
+        "worn": 3,
+        "fault": 0
+      },
+      "transition_counts": {
+        "normal": {
+          "normal": 0,
+          "worn": 0,
+          "fault": 0
+        },
+        "worn": {
+          "normal": 0,
+          "worn": 2,
+          "fault": 0
+        },
+        "fault": {
+          "normal": 0,
+          "worn": 0,
+          "fault": 0
+        }
+      },
+      "reason": null
+    },
+    {
+      "id": "sensor-gap",
+      "status": "ok",
+      "observations": [
+        null,
+        null
+      ],
+      "log_likelihood": 1.6653345369377348e-16,
+      "path": [
+        "normal",
+        "normal"
+      ],
+      "path_log_probability": -0.3856624808119846,
+      "state_counts": {
+        "normal": 2,
+        "worn": 0,
+        "fault": 0
+      },
+      "transition_counts": {
+        "normal": {
+          "normal": 1,
+          "worn": 0,
+          "fault": 0
+        },
+        "worn": {
+          "normal": 0,
+          "worn": 0,
+          "fault": 0
+        },
+        "fault": {
+          "normal": 0,
+          "worn": 0,
+          "fault": 0
+        }
+      },
+      "reason": null
+    },
+    {
+      "id": "blank-log",
+      "status": "empty_sequence",
+      "observations": [],
+      "log_likelihood": null,
+      "path": null,
+      "path_log_probability": null,
+      "state_counts": {},
+      "transition_counts": {},
+      "reason": "empty observation sequences are not allowed"
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "ok": 3,
+    "impossible": 0,
+    "empty": 1,
+    "invalid": 0,
+    "log_likelihoods": [
+      -2.371009509118081,
+      -4.253777669534994,
+      1.6653345369377348e-16
+    ]
+  }
+}
