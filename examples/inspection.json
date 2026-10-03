@@ -1,0 +1,23 @@
+{
+  "model": {
+    "states": ["Healthy", "Degraded", "Fault"],
+    "observations": ["normal", "warning", "alarm"],
+    "initial": {"Healthy": 0.7, "Degraded": 0.2, "Fault": 0.1},
+    "transition": {
+      "Healthy": {"Healthy": 0.85, "Degraded": 0.12, "Fault": 0.03},
+      "Degraded": {"Healthy": 0.1, "Degraded": 0.7, "Fault": 0.2},
+      "Fault": {"Healthy": 0.0, "Degraded": 0.1, "Fault": 0.9}
+    },
+    "emission": {
+      "Healthy": {"normal": 0.9, "warning": 0.09, "alarm": 0.01},
+      "Degraded": {"normal": 0.3, "warning": 0.5, "alarm": 0.2},
+      "Fault": {"normal": 0.0, "warning": 0.2, "alarm": 0.8}
+    }
+  },
+  "sequences": [
+    {"id": "pump-01", "observations": ["normal", "normal", null, "warning", "alarm"]},
+    {"id": "pump-02", "observations": ["alarm", "alarm", "alarm"]},
+    {"id": "valve-03", "observations": []},
+    {"id": "motor-04", "observations": ["normal", "alarm", "normal"]}
+  ]
+}
